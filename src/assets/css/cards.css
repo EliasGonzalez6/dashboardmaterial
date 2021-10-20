@@ -1,0 +1,17 @@
+.cardUsers{
+    text-align: center;
+    background-color: #2a87b3;
+    color:#FFFFFF;    
+}
+.cardProducto{
+    text-align: center;
+    background-color: #05926f;
+    color:#FFFFFF;     
+    font-weight: 900;
+}
+.cardCategorias{
+    text-align: center;    
+    background-color: #626664;
+    color:#FFFFFF; 
+    
+}

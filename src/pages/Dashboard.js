@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Grid} from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles';
 import Navbar from "../components/Navbar";
 import 'fontsource-roboto';
 import '../assets/css/Dashboard.css';
-import Group from '@material-ui/icons/Group';
-import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
-import Layers from '@material-ui/icons/Layers';
-import CardsHeader from '../components/CardsHeader';
+
+import CardUsers from '../components/CardUsers';
+import CardProducto from '../components/CardProducto';
+import CardCategorias from '../components/CardCategorias';
+
+import CardLastProduct from '../components/CardLastProduct';
+import CardLastCategory from '../components/CardLastCategory';
+import CardLastUser from '../components/CardLastUser';
+
 import Cards from '../components/Cards';
 import Graphics from '../components/Graphics';
 import TableMaterial from '../components/TableMaterial';
-
+import TableProductos from '../components/TableProductos';
+import '../assets/css/cards.css';
 const useStyles= makeStyles(()=>({
 root:{
     flexGrow: 1
@@ -35,7 +41,7 @@ const data = [
     {
       id:1,
       video:
-        "Como Hacer un Split en React JS || React Split Pane || Tutorial en Español (2020)",
+        "1545 Como Hacer un Split en React JS || React Split Pane || Tutorial en Español (2020)",
       fecha: "6 de sep. 2020",
       visualizaciones: 32,
       imagen: require("../assets/img/split.webp"),
@@ -58,7 +64,7 @@ const data = [
       },
   ];
 
-function Dashboard(props) {
+function Dashboard(props) {    
     const classes= useStyles();
     return (
         <div className={classes.root}>
@@ -67,29 +73,27 @@ function Dashboard(props) {
                 <Grid item xs={12}>
                     <Navbar/>
                 </Grid>
-
-                
                 <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
-                   <CardsHeader icono={<Group className={classes.iconos}/>} titulo="USUARIOS" texto="50" color="rgba(248,50,160,0.82)" font="white"/>
+                  <CardCategorias/>                  
                 </Grid>
                 <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
-                <CardsHeader icono={<LocalGroceryStoreIcon className={classes.iconos}/>} titulo="PRODUCTOS" texto="45" color="rgba(50,248,193,1)" font="white"/>
+                  <CardUsers/>
                 </Grid>
-                <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>
-                <CardsHeader icono={<Layers className={classes.iconos}/>} titulo="CATEGORIAS" texto="85" color="rgba(248,205,50,1)" font="white"/>
+                <Grid item xs={12} sm={4} md={4} lg={4} xl={4}>                
+                  <CardProducto/>
                 </Grid>
 
                 <Grid container spacing={1} className={classes.container} xs={12} sm={12} md={6} lg={6} xl={6}>
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                    <Cards titulo="ULTIMA CATEGORIA" texto="algo"/>
+                    <CardLastCategory/>
                     </Grid>
 
                     <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-                    <Cards titulo="ULTIMO USUARIO" texto="algo"/>
+                    <CardLastUser/>
                     </Grid>
                   
                     <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <Cards titulo="ULTIMO PRODUCTO" texto="algo"/>
+                    <CardLastProduct/>
                     </Grid>                   
                    
                     </Grid>
@@ -105,6 +109,9 @@ function Dashboard(props) {
                     <TableMaterial data={data}/>
                     </Grid>
 
+                    <Grid item xs={12} className={classes.containerTabla}>
+                      <TableProductos/>
+                    </Grid>
 
             </Grid>
         </div>
