@@ -9,13 +9,13 @@ function Graphics(props) {
             {
             label:"Alta de productos",
             fill: false,
-            backgroundColor: 'rgba(73,155,234,1)',
-            borderColor:'rgba(73,155,234,1)',
-            pointBorderColor:'rgba(73,155,234,1)',
+            backgroundColor: 'rgba(243,11,11,1)',
+            borderColor:'rgba(243,11,11,1)',
+            pointBorderColor:'rgba(243,11,11,1)',
             pointBorderWidth:1,
             pointHoverRadius:5,
-            pointHoverBackgroundColor:'rgba(73,155,234,1)',
-            pointHoverBorderColor:'rgba(73,155,234,1)',
+            pointHoverBackgroundColor:'rgba(243,11,11,1)',
+            pointHoverBorderColor:'rgba(243,11,11,1)',
             pointRadius: 1,
             pointHitRadius: 10,
             data: [2, 9, 6, 6, 10, 12]
