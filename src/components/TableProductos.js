@@ -1,4 +1,7 @@
 import React, {Component} from "react";
+import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from '@material-ui/core';
+import {withStyles} from '@material-ui/core/styles';
+import logo from '../assets/img/logo.jpg';
 
 class TableProductos extends Component{
     
@@ -24,7 +27,7 @@ class TableProductos extends Component{
         console.log(data);                
         this.setState(
             {
-                data:data.products[1].name                
+                data:data.count             
             }
         )              
     }
@@ -51,9 +54,30 @@ class TableProductos extends Component{
         }
 
         return (
-            <div>
-                {contenido}
-            </div>
+            <TableContainer>
+            <Table>
+            <TableHead>
+            <TableRow>
+               <TableCell>Imagen</TableCell> 
+               <TableCell>Nombre</TableCell> 
+               <TableCell>Marca</TableCell>
+               <TableCell>Categoria</TableCell> 
+               <TableCell>Precio</TableCell> 
+               <TableCell>Stock</TableCell> 
+            </TableRow>
+            </TableHead>
+            <TableBody>                
+                    <TableRow>
+                        <TableCell><img src={logo} width="35px" height="25px"/>{"  "}</TableCell>
+                        <TableCell align="center">{this.state.data}</TableCell>
+                        <TableCell align="center"></TableCell>
+                        <TableCell align="center"></TableCell>
+                        <TableCell align="center"></TableCell>
+                        <TableCell align="center"></TableCell>
+                    </TableRow>                
+            </TableBody>
+            </Table>
+        </TableContainer>
         );
     }
 }
