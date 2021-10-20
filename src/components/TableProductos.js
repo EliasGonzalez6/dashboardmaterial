@@ -48,8 +48,8 @@ class TableProductos extends Component{
                     <TableRow>
                         <TableCell><img src={logo} width="35px" height="25px"/>{"  "}</TableCell>
                         <TableCell align="center">{product.name}</TableCell>
-                        <TableCell align="center">{product.brand}</TableCell>
-                        <TableCell align="center">{product.category}</TableCell>
+                        <TableCell align="center">{product.brands.name}</TableCell>
+                        <TableCell align="center">{product.categories.name}</TableCell>
                         <TableCell align="center">{product.price}</TableCell>
                         <TableCell align="center">{product.stock}</TableCell>
                     </TableRow>   
