@@ -12,6 +12,9 @@
 .cardCategorias{
     text-align: center;    
     background-color: #626664;
-    color:#FFFFFF; 
-    
+    color:#FFFFFF;     
+}
+.celdasHeader{
+    text-align: center;        
+    color:#000;     
 }
